@@ -1,0 +1,65 @@
+<section className="grid lg:grid-cols-12 grid-cols-1 gap-4">
+        <div className="lg:col-span-7 bg-white rounded-[14px] p-[20px]">
+          {/* heading text */}
+          <div className="flex items-center justify-between">
+            <h3 className="text-[18px] leading-[28px]">Sales Trends</h3>
+            <div className="flex items-center gap-[10px]">
+              <h4 className="text-[14px] leading-[22px]">Short by : </h4>
+              <div className="px-[12px] py-[6px] border-[1px] border-[#DADDDD] flex justify-center items-center gap-[10px] rounded-[20px]">
+                <h3 className="text-[14px]">Weekly</h3>
+                <ArrowdownIcon />
+              </div>
+            </div>
+          </div>
+          <div>
+            <Chart
+              type="bar"
+              options={options}
+              series={series}
+              width={"100%"}
+              height={300}
+            />
+          </div>
+        </div>
+        <div className="lg:col-span-5 rounded-[14px] grid sm:grid-cols-2  gap-4">
+          <div className="py-20 rounded-[14px] bg-white"></div>
+          <div className="py-20 rounded-[14px] bg-white"></div>
+          <div className="py-20 rounded-[14px] bg-white"></div>
+          <div className="py-20 rounded-[14px] bg-white"></div>
+        </div>
+        <div className="lg:col-span-7 bg-white rounded-[14px] p-[20px]">
+          {/* heading text */}
+          <div className="flex items-center justify-between">
+            <h3 className="text-[18px] leading-[28px]">Last Orders</h3>
+            <div className="flex items-center gap-[10px]">
+              <h4 className="text-[18px] leading-[22px] text-[#34CAA5] cursor-pointer">
+                See All
+              </h4>
+            </div>
+          </div>
+          {/* table */}
+          <div className="mt-1 overflow-x-auto">
+            <Table.ScrollContainer minWidth={"600"}>
+              <Table>
+                <Table.Thead>{headers}</Table.Thead>
+                <Table.Tbody>{rows}</Table.Tbody>
+              </Table>
+            </Table.ScrollContainer>
+          </div>
+        </div>
+        <div className="lg:col-span-5 bg-white rounded-[14px] p-[20px]">
+          {/* heading text */}
+          <div className="flex items-center justify-between mb-[20px]">
+            <h3 className="text-[18px] leading-[26px]">Top Platform</h3>
+            <div className="flex items-center gap-[10px]">
+              <h4 className="text-[18px] leading-[22px] text-[#34CAA5] cursor-pointer">
+                See All
+              </h4>
+            </div>
+          </div>
+          {/* progress bar section */}
+          <section className="flex flex-col items-center gap-[20px]">
+            {platformDetails}
+          </section>
+        </div>
+      </section>
